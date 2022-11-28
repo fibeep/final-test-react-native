@@ -469,11 +469,14 @@ let newData = [
 
 const Item = ({ band_name, fans, formed, origin, split }) => (
   <View style={styles.item}>
-    <Text style={styles.bandcountryname}>{band_name}</Text>
-    <Text style={styles.fans}>{formed}</Text>
-
-    <Text style={styles.origin}>{origin}</Text>
-    <Text style={styles.fans}>{(fans * 1000).toLocaleString("en-US")}</Text>
+    <View>
+      <Text style={split !== "-" ? styles.split : styles.united}>{band_name}</Text>
+      <Text style={styles.formed}>{formed}</Text>
+    </View>
+    <View style={styles.second}>
+      <Text style={styles.origin}>{origin}</Text>
+      <Text style={styles.fans}>{(fans * 1000).toLocaleString("en-US")}</Text>
+    </View>
   </View>
 );
 
@@ -514,7 +517,7 @@ const styles = StyleSheet.create({
     borderColor: "#fff",
     borderStyle: "solid",
     display: "flex",
-    direction: "row",
+    flexDirection: "row",
     justifyContent: "space-between",
   },
   title: {
@@ -528,9 +531,28 @@ const styles = StyleSheet.create({
   fans: {
     fontSize: 12,
     color: "#fff",
+    textAlign: "right",
   },
   origin: {
     color: "#999",
     fontSize: 18,
+    textAlign: "right",
+  },
+  united: {
+    color: "#fff",
+    fontWeight: "bold",
+    fontSize: 18,
+  },
+  split: {
+    color: "#666",
+    textDecorationLine: "line-through",
+    fontSize: 18,
+  },
+  second: {
+    textAlign: "right",
+  },
+  formed: {
+    fontSize: 12,
+    color: "#fff",
   },
 });

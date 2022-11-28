@@ -462,7 +462,7 @@ let newData = [
 export default function Stats() {
 
 let splitBands = newData.filter(obj => {
-  if(obj.split == '-') {
+  if(obj.split !== '-') {
     return true
   } else {
     return false

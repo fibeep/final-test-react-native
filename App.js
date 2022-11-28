@@ -31,8 +31,8 @@ export default function App() {
             // You can return any component that you like here!
             return <Ionicons name={iconName} size={size} color={color} />;
           },
-          tabBarActiveTintColor: "tomato",
-          tabBarInactiveTintColor: "gray",
+          tabBarActiveTintColor: "#f00",
+          tabBarInactiveTintColor: "#600",
         })}
       >
         <Tab.Screen name="Bands" component={Bands} />
