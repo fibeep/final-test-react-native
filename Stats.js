@@ -1,10 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Ionicons } from "react-native-vector-icons";
 import * as React from "react";
-import metalData from "./metal";
+
 
 
 let newData = [
@@ -476,6 +473,9 @@ let totalBands = newData.length
 
 let sumFans = newData.reduce((total, band) => total + band.fans, 0)
 
+let totalFans = (sumFans * 1000).toLocaleString('en-US')
+
+
 let allCountries = [] 
 
 for (let i = 0; i < newData.length; i++) {
@@ -509,7 +509,7 @@ let moreUniqueStyles = totalStyles.filter(
     <View style={styles.container}>
       <Text style={styles.header}>Metal🤘🏻🤘🏻</Text>
       <Text style={styles.text}>Total Number of Bands: {totalBands}</Text>
-      <Text style={styles.text}>Total Metal Fans: {sumFans * 1000}</Text>
+      <Text style={styles.text}>Total Metal Fans: {totalFans}</Text>
       <Text style={styles.text}>Number of Countries Represented: {uniqueCountries}</Text>
       <Text style={styles.text}>Number of Active Bands {totalBands - splitBands}</Text>
       <Text style={styles.text}>Number of Bands That Have Split: {splitBands}</Text>

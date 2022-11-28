@@ -1,8 +1,5 @@
 import { StatusBar } from "expo-status-bar";
 import { FlatList, StyleSheet, Text, View } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Ionicons } from "react-native-vector-icons";
 import * as React from "react";
 
 let newData = [
@@ -506,7 +503,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   item: {
-    // backgroundColor: "#f9c2ff",
     padding: 5,
     marginVertical: 2,
     marginHorizontal: 2,
