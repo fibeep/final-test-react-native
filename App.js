@@ -7,6 +7,8 @@ import * as React from "react";
 import Bands from './Bands';
 import Stats from './Stats';
 import Styles from './Styles';
+import metalData from './metal';
+
 
 const Tab = createBottomTabNavigator();
 
