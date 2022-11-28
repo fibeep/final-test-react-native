@@ -5,6 +5,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "react-native-vector-icons";
 import * as React from "react";
 import metalData from "./metal";
+import { block } from "react-native-reanimated";
 
 let newData = [
   {
@@ -479,7 +480,6 @@ let allCountries = []
 
 for (let i = 0; i < newData.length; i++) {
   allCountries.push(newData[i].origin)
-  console.log(newData[i].origin)
 }
 
 let uniqueCountries = allCountries.filter(
@@ -489,13 +489,13 @@ let uniqueCountries = allCountries.filter(
 
   return (
     <View style={styles.container}>
-      <Text>Metal🤘🏻🤘🏻</Text>
-      <Text>Total Number of Bands: {totalBands}</Text>
-      <Text>Total Metal Fans: {sumFans * 1000}</Text>
-      <Text>Number of Countries Represented: {uniqueCountries}</Text>
-      <Text>Number of Active Bands {totalBands - splitBands}</Text>
-      <Text>Number of Bands That Have Split: {splitBands}</Text>
-      <Text>Styles: </Text>
+      <Text style={styles.header}>Metal🤘🏻🤘🏻</Text>
+      <Text style={styles.text}>Total Number of Bands: {totalBands}</Text>
+      <Text style={styles.text}>Total Metal Fans: {sumFans * 1000}</Text>
+      <Text style={styles.text}>Number of Countries Represented: {uniqueCountries}</Text>
+      <Text style={styles.text}>Number of Active Bands {totalBands - splitBands}</Text>
+      <Text style={styles.text}>Number of Bands That Have Split: {splitBands}</Text>
+      <Text style={styles.text}>Styles: </Text>
       <StatusBar style="auto" />
     </View>
   );
@@ -504,8 +504,19 @@ let uniqueCountries = allCountries.filter(
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#000",
     alignItems: "center",
     justifyContent: "center",
   },
+  // text: {
+  //   color: "#fff",
+  //   fontSize: 18,
+  //   fontWeight: "bold"
+  // },
+  header: {
+    color: '#fff',
+    fontSize: 30,
+    marginBottom: 10,
+    fontWeight: "bold"
+  }
 });
