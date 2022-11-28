@@ -19,13 +19,11 @@ export default function App() {
             let iconName;
 
             if (route.name === "Bands") {
-              iconName = focused
-                ? "ios-information-circle"
-                : "ios-information-circle-outline";
+              iconName = focused ? "musical-notes" : "musical-notes-outline";
             } else if (route.name === "Stats") {
-              iconName = focused ? "partly-sunny" : "partly-sunny-outline";
+              iconName = focused ? "stats-chart" : "stats-chart-outline";
             } else if (route.name === "Styles") {
-              iconName = focused ? "egg" : "egg-outline";
+              iconName = focused ? "barcode" : "barcode-outline";
             }
 
             // You can return any component that you like here!
